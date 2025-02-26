@@ -7,6 +7,7 @@ use PopupPlugin\SingletonInstance;
 class Popup implements PopupInterface {
   use SingletonInstance;
 
+  // Constructor
   private function __construct() {
     add_action('wp_body_open', [$this, 'add_popup_root_div']);
     add_action('init', [$this, 'register_post_type']);
@@ -15,10 +16,12 @@ class Popup implements PopupInterface {
     add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
   }
 
+  // Add react root element
   public function add_popup_root_div() {
     echo '<div id="popup-root"></div>';
   }
 
+  // Register new Custom Post Type
   public function register_post_type() {
     register_post_type('popup', [
       'labels'        => ['name' => 'Popups', 'singular_name' => 'Popup'],
@@ -71,6 +74,7 @@ class Popup implements PopupInterface {
       true
     );
 
+    // Send variable to react
     wp_localize_script(
       'popup-js',
       'wp_data',
@@ -81,6 +85,7 @@ class Popup implements PopupInterface {
       ]
     );
 
+    // Export css file
     wp_enqueue_style(
         'popup-plugin-css',
         plugins_url('../../assets/css/popup.css', __FILE__),
