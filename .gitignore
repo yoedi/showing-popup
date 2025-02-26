@@ -1,0 +1,68 @@
+.DS_Store
+phpcs.xml
+phpunit.xml
+wp-cli.local.yml
+*.sql
+*.tar.gz
+*.zip
+
+# Ignore Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log
+.pnp/
+.pnp.js
+
+# Ignore Webpack build files
+/dist/
+build/
+*.hot-update.js
+*.hot-update.json
+*.hot-update.*.js
+*.hot-update.*.json
+.cache/
+public/
+
+# Ignore environment files
+.env
+.env.local
+.env.*.local
+
+# Ignore Composer dependencies
+vendor/
+composer.lock
+
+# Ignore SASS, CSS, and compiled assets
+*.css.map
+*.scssc
+*.sassc
+*.css.min
+
+# Ignore Editor and OS-specific files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+.idea/
+.vscode/
+*.log
+
+# Ignore WordPress-related files (optional)
+# wp-config.php
+# .htaccess
+
+# Ignore Webpack stats file
+stats.json
+
+# Ignore Git merge and conflict files
+*.orig
+
+# Ignore compiled JavaScript and source maps
+*.min.js
+*.js.map
+
+# Ignore Webpack output (if using custom output directories)
+webpack-stats.json
+webpack-assets.json
